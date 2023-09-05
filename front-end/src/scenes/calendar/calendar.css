@@ -1,0 +1,33 @@
+
+.fc-list-day-text{
+    color: black;
+}
+.fc-list-event-time:hover{
+    color: black;
+    
+}
+.fc-list-event-title:hover{
+    color: black ;
+}
+.fc-event-title:hover{
+    color: black !important;
+}
+.fc-event:hover{
+    color: black !important;
+    background-color: aqua !important;
+}
+.fc-list-event:hover{
+    background-color: aqua !important;
+}
+.fc-event{
+    cursor: pointer;
+}
+.fc-daygrid-day{
+    cursor: pointer;
+}
+.fc-daygrid-day:hover{
+    background-color: dimgrey;
+}
+.fc-daygrid-day-events{
+    padding: 2px;
+}
