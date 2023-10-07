@@ -15,6 +15,7 @@ import {Bar} from "./scenes/bar";
 import {Pie} from "./scenes/pieChart";
 import {Line} from "./scenes/lineChart";
 import {Geography} from "./scenes/geography";
+import { Login } from "./scenes/login";
 import "./App.css";
 
 export function App() {
@@ -42,6 +43,7 @@ export function App() {
               <Route path="/pie" element={<Pie />} />
               <Route path="/line" element={<Line />} />
               <Route path="/geography" element={<Geography />} />
+              <Route path="/login" element={<Login />} />
             </Routes>
           </main>
         </div>

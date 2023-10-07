@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
+from django.contrib.messages import constants as mensajes_error
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -39,7 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    'inventary',
+    'coreapi',
+    'clientes',
+    'compras',
+    'productos',
+    'proveedores',
+    'ventas',
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -107,9 +114,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-co'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Bogota'
 
 USE_I18N = True
 
@@ -126,7 +133,36 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 #cors autorizaciones
 CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:9000",
+    
+    "http://localhost:5173",
 ]
+
+# In settings.py
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+}
+
+# configuracion para enviar correos
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend' #para que funcione el backend de django
+EMAIL_HOST="smtp.gmail.com"  #correo del servidor smtp
+EMAIL_PORT=587   #puerto usado por gmail
+EMAIL_USE_TLS=True    #usar tls en la conexión con el servidor SMTP
+EMAIL_HOST_USER="jhoncristancho08@gmail.com"      #usuario de gmail
+EMAIL_HOST_PASSWORD="hvlb eztv kacx mpjg "     #contraseña de <PASSWORD>
+
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+MESSAGE_TAGS = {
+    mensajes_error.DEBUG:'debug',
+    mensajes_error.INFO:'info',
+    mensajes_error.SUCCESS:'success',
+    mensajes_error.WARNING:'warning',
+    mensajes_error.ERROR:'danger',
+}

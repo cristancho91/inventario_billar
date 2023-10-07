@@ -22,7 +22,7 @@ export const Sidebars = ()=>{
     const colors = tokens(theme.palette.mode);
 
     const [isCollapsed, setisCollapsed ] = useState(false);
-    const [selected, setSelected] = useState("Dashboard");
+    const [selected, setSelected] = useState("Inicio");
 
     return (
         <Box >
@@ -130,11 +130,11 @@ export const Sidebars = ()=>{
                         color={colors.grey[100]}
                         sx={{ m: "15px 0 5px 20px" }}
                         >
-                        Data
+                        Datos
                         </Typography>
 
                         <Item
-                        title="Manage Team"
+                        title="Usuarios"
                         to="/team"
                         icon={<PeopleOutlinedIcon />}
                         selected={selected}
